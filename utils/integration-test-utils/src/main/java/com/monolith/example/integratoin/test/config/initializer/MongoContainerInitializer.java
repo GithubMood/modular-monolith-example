@@ -14,8 +14,8 @@ public class MongoContainerInitializer implements ApplicationContextInitializer<
     public void initialize(ConfigurableApplicationContext configurableApplicationContext) {
         mongoDbContainer.start();
 
-        TestPropertyValues.of(
-                "spring.data.mongodb.uri=" + mongoDbContainer.getReplicaSetUrl()
-        ).applyTo(configurableApplicationContext.getEnvironment());
+        var mongoUrl = mongoDbContainer.getReplicaSetUrl() + "?retryWrites=false";
+        TestPropertyValues.of("spring.data.mongodb.uri=" + mongoUrl)
+                .applyTo(configurableApplicationContext.getEnvironment());
     }
 }

@@ -2,4 +2,6 @@ apply from: "$rootDir/gradle/scripts/unit-test.gradle"
 
 dependencies {
     api "org.springframework.boot:spring-boot-starter-data-mongodb"
+    api "com.remondis:remap:${reMapVersion}"
+    api project(":utils:time-utils")
 }

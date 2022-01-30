@@ -1,0 +1,7 @@
+dependencies {
+    implementation project(":utils:unit-test-utils")
+    implementation project(":common:common-code")
+    implementation project(":common:common-config")
+    implementation "org.testcontainers:mongodb"
+    api "org.springframework.boot:spring-boot-starter-test"
+}

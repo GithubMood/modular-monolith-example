@@ -1,0 +1,12 @@
+rootProject.name = 'modular-monolith-example'
+include "utils:time-utils",
+        "utils:unit-test-utils",
+        "common:common-code",
+        "common:common-config",
+        "utils:integration-test-utils",
+        "modules:author:api",
+        "modules:author:impl",
+        "modules:book",
+        "modules:publishing",
+        "modules:api-gateway",
+        "app"

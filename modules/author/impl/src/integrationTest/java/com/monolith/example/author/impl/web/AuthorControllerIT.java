@@ -1,7 +1,9 @@
 package com.monolith.example.author.impl.web;
 
 import com.monolith.example.author.impl.config.annotation.slices.RestControllerTest;
+import com.monolith.example.author.impl.domain.model.Author;
 import com.monolith.example.author.impl.domain.service.AuthorService;
+import com.monolith.example.integratoin.test.utils.JsonUtils;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -21,17 +23,17 @@ class AuthorControllerIT {
     @Test
     void registerAuthor() throws Exception {
         //GIVEN
+        var author = Author.builder()
+                .name("Stephen King")
+                .age(74)
+                .build();
+        var jsonRequest = JsonUtils.convertToJson(author);
 
         //WHEN
         mockMvc.perform(post("/authors")
-                        .content("""
-                                {"name" : "dima",
-                                 "age" : 10
-                                }
-                                """)
+                        .content(jsonRequest)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isCreated());
-
 
         //THEN
     }

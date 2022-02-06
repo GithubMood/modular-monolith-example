@@ -1,4 +1,4 @@
-package com.example.test;
+package com.monolith.example.unit.test.extenstion;
 
 import com.example.util.time.Time;
 import org.junit.jupiter.api.extension.AfterEachCallback;

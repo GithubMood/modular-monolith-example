@@ -1,8 +1,7 @@
-name: Default Branch Workflow
+name: Build
 
 on:
-  push:
-    branches-ignore: [ master ]
+  workflow_call:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:

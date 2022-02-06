@@ -26,11 +26,7 @@ public class AuthorController {
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     @ResponseStatus(HttpStatus.CREATED)
-    public AuthorCreatedResponse createReport(@RequestBody Author author) {
-        if (true) {
-            throw new IllegalArgumentException("Something happend");
-        }
-
+    public AuthorCreatedResponse createAuthor(@RequestBody Author author) {
         var newAuthorId = authorService.registerNewAuthor(author);
         return AuthorCreatedResponse.builder()
                 .id(newAuthorId)

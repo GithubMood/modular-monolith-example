@@ -30,8 +30,8 @@ jobs:
           arguments: build --no-daemon
 
       - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action/composite@v1
+        uses: mikepenz/action-junit-report@v2
         if: always()
         with:
-          files: '**/build/test-results/**/*.xml'
+          report_paths: '**/build/test-results/**/*.xml'
           check_name: 'Test Results'

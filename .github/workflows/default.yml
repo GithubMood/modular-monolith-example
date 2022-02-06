@@ -13,17 +13,26 @@ jobs:
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - name: Checkout project
+        uses: actions/checkout@v2
 
       - name: Set up JDK
         uses: actions/setup-java@v2
         with:
           distribution: 'adopt'
           java-version: '17'
-          cache: 'gradle'
 
-      - name: Make gradlew executable
-        run: chmod +x ./gradlew
+      - name: Validate Gradle Wrapper
+        uses: gradle/wrapper-validation-action@v1
 
-      - name: Gradle build
-        run: ./gradlew build --no-daemon
+      - name: Gradle Build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: build --no-daemon
+
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action/composite@v1
+        if: always()
+        with:
+          files: '**/build/test-results/**/*.xml'
+          check_name: 'Test Results'

@@ -27,6 +27,9 @@ public class AuthorController {
     )
     @ResponseStatus(HttpStatus.CREATED)
     public AuthorCreatedResponse createReport(@RequestBody Author author) {
+        if (true) {
+            throw new IllegalArgumentException("fff");
+        }
         var newAuthorId = authorService.registerNewAuthor(author);
         return AuthorCreatedResponse.builder()
                 .id(newAuthorId)

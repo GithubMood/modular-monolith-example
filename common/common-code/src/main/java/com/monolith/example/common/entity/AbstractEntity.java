@@ -2,7 +2,6 @@ package com.monolith.example.common.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
 import lombok.experimental.SuperBuilder;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
@@ -14,7 +13,6 @@ import java.time.LocalDateTime;
 @Data
 @SuperBuilder
 @NoArgsConstructor
-@Accessors(chain = true)
 public class AbstractEntity<T> {
     @Id
     protected T id;

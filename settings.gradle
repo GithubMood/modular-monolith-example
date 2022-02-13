@@ -8,5 +8,6 @@ include "utils:time-utils",
         "modules:author:impl",
         "modules:book",
         "modules:publishing",
-        "modules:api-gateway",
+        "modules:api-gateway:api",
+        "modules:api-gateway:impl",
         "app"

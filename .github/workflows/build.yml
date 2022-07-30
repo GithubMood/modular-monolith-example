@@ -44,7 +44,7 @@ jobs:
         id: cache-build-output
         uses: actions/cache@v3
         with:
-          path: '**/build/**'
+          path: '**/build'
           key: build-output
   workflow2:
     runs-on: ubuntu-latest

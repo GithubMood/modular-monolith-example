@@ -18,9 +18,13 @@ jobs:
       - name: Checkout project
         uses: actions/checkout@v2
 
-      - name: Generate number
+      - name: Generate unique build number
         run: |
-          echo "Number: ${GITHUB_SHA}-${{ github.run_id }}-${{ github.run_attempt }}"
+          echo "${GITHUB_SHA}-${{ github.run_id }}-${{ github.run_attempt }}" >> $UNIQUE_BUILD_NUMBER
+
+      - name: Display
+        run: |
+          echo "Number: ${$UNIQUE_BUILD_NUMBER}
 
       - name: Set up JDK
         uses: actions/setup-java@v2

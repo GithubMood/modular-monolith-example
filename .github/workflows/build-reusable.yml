@@ -23,12 +23,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Generate version
-        run: |
-          echo ARTIFACT_VERSION="${GITHUB_SHA}-${{ github.run_id }}-${{ github.run_attempt }}" >> $GITHUB_ENV
-
-      - name: Export version
         id: export-version
         run: |
+          echo ARTIFACT_VERSION="${GITHUB_SHA}-${{ github.run_id }}-${{ github.run_attempt }}" >> $GITHUB_ENV
           echo "::set-output name=artifact-version::$ARTIFACT_VERSION"
 
       - name: Set up JDK

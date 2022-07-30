@@ -19,10 +19,15 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Generate unique build number
-        id: unique-build-number
         run: |
           echo UNIQUE_BUILD_NUMBER="${GITHUB_SHA}-${{ github.run_id }}-${{ github.run_attempt }}" >> $GITHUB_ENV
+
+      - name: Print unique build number
+        run: |
           echo "Number: $UNIQUE_BUILD_NUMBER"
+
+      - name: Remember unique build number
+        run: |
           echo "::set-output name=unique-build-number::$UNIQUE_BUILD_NUMBER"
 
       - name: Set up JDK

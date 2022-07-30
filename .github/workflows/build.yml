@@ -45,7 +45,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: '**/build/**'
-          key: build-output
+          key: build-output-2
   workflow2:
     runs-on: ubuntu-latest
     needs: workflow
@@ -56,7 +56,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: '~'
-          key: build-output
+          key: build-output-2
 
       - name: Publish Test Results
         uses: mikepenz/action-junit-report@v2

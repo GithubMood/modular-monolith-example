@@ -10,8 +10,9 @@ on:
 jobs:
   build:
     uses: ./.github/workflows/build.yml
-  print:
+
+  print-version:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - run: echo ${{ needs.build.outputs.build-version }}
+      - run: echo ${{ needs.build.outputs.artifact-version }}

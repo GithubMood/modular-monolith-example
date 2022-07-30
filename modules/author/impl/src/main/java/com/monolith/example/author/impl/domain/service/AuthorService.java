@@ -3,7 +3,6 @@ package com.monolith.example.author.impl.domain.service;
 import com.monolith.example.author.impl.domain.model.Author;
 import com.monolith.example.author.impl.integration.db.entity.AuthorEntity;
 import com.monolith.example.author.impl.integration.db.repository.AuthorRepository;
-import com.remondis.remap.Mapping;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -23,12 +22,9 @@ public class AuthorService {
     }
 
     private AuthorEntity convertToEntity(Author newAuthor) {
-        return Mapping.from(Author.class).to(AuthorEntity.class)
-                .omitOtherSourceProperties()
-                .omitInDestination(AuthorEntity::getId)
-                .omitInDestination(AuthorEntity::getCreatedAt)
-                .omitInDestination(AuthorEntity::getLastModifiedAt)
-                .mapper()
-                .map(newAuthor);
+        return AuthorEntity.builder()
+                .name(newAuthor.getName())
+                .age(newAuthor.getAge())
+                .build();
     }
 }

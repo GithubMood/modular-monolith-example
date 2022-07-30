@@ -12,6 +12,7 @@ jobs:
     uses: ./.github/workflows/reusable-build.yml
 
   static-analysis:
+    needs: build
     uses: ./.github/workflows/reusable-static-analysis.yml
 
   print-version:

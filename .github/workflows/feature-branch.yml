@@ -1,4 +1,4 @@
-name: Default Branch Workflow
+name: Feature Branch Workflow
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    uses: ./.github/workflows/build.yml
+    uses: ./.github/workflows/build-reusable.yml
 
   print-version:
     runs-on: ubuntu-latest

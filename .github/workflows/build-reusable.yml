@@ -1,10 +1,10 @@
-name: Build
+name: Build Reusable workflow
 
 on:
   workflow_call:
     outputs:
       artifact-version:
-        description: "Artifact version "
+        description: "Artifact version"
         value: ${{ jobs.stage.outputs.artifact-version }}
 
   # Allows you to run this workflow manually from the Actions tab

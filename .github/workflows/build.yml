@@ -2,6 +2,10 @@ name: Build
 
 on:
   workflow_call:
+    outputs:
+      build-version:
+        description: "The first output string"
+        value: ${{ jobs.stage.outputs.build-version }}
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -11,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
 
     outputs:
-      output1: ${{ steps.build-version.outputs.build-version }}
+      build-version: ${{ steps.build-version.outputs.build-version }}
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it

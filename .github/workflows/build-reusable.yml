@@ -1,19 +1,35 @@
-name: Build
+name: Build Reusable workflow
 
 on:
   workflow_call:
+    outputs:
+      artifact-version:
+        description: "Artifact version"
+        value: ${{ jobs.stage.outputs.artifact-version }}
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 jobs:
-  build:
+  stage:
     runs-on: ubuntu-latest
+
+    outputs:
+      artifact-version: ${{ steps.export-version.outputs.artifact-version }}
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout project
         uses: actions/checkout@v2
+
+      - name: Generate version
+        run: |
+          echo ARTIFACT_VERSION="${GITHUB_SHA}-${{ github.run_id }}-${{ github.run_attempt }}" >> $GITHUB_ENV
+
+      - name: Export version
+        id: export-version
+        run: |
+          echo "::set-output name=artifact-version::$ARTIFACT_VERSION"
 
       - name: Set up JDK
         uses: actions/setup-java@v2
@@ -36,7 +52,7 @@ jobs:
           report_paths: '**/build/test-results/**/*.xml'
           check_name: 'Test Results'
 
-      - name: Archive test report
+      - name: Publish Test Report
         uses: actions/upload-artifact@v2
         with:
           name: Test report

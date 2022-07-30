@@ -8,5 +8,5 @@ on:
   workflow_dispatch:
 
 jobs:
-  default:
-    uses: ./.github/workflows/common.yml
+  build:
+    uses: ./.github/workflows/build.yml

@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    uses: ./.github/workflows/build-reusable.yml
+    uses: ./.github/workflows/reusable-build.yml
 
   print-version:
     runs-on: ubuntu-latest

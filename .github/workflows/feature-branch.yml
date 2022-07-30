@@ -9,7 +9,10 @@ on:
 
 jobs:
   build:
-    uses: ./.github/workflows/build-reusable.yml
+    uses: ./.github/workflows/reusable-build.yml
+
+  static-analysis:
+    uses: ./.github/workflows/reusable-static-analysis.yml
 
   print-version:
     runs-on: ubuntu-latest

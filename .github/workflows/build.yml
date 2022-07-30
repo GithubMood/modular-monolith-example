@@ -24,7 +24,7 @@ jobs:
 
       - name: Display
         run: |
-          echo "Number: $UNIQUE_BUILD_NUMBER
+          echo "Number: $UNIQUE_BUILD_NUMBER"
 
       - name: Set up JDK
         uses: actions/setup-java@v2

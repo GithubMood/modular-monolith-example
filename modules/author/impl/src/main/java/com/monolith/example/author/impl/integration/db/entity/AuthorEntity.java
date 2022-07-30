@@ -1,27 +1,42 @@
 package com.monolith.example.author.impl.integration.db.entity;
 
-import com.monolith.example.common.entity.AbstractEntity;
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 import lombok.experimental.FieldDefaults;
-import lombok.experimental.SuperBuilder;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import java.time.LocalDateTime;
+
 @Data
-@SuperBuilder
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
 @Accessors(chain = true)
-@EqualsAndHashCode(callSuper = true)
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Document("author")
-public class AuthorEntity extends AbstractEntity<String> {
+public class AuthorEntity {
+    @Id
+    String id;
+
     @Field
     String name;
 
     @Field
     int age;
+
+    @Field
+    @CreatedDate
+    LocalDateTime createdAt;
+
+    @Field
+    @LastModifiedDate
+    LocalDateTime lastModifiedAt;
 }

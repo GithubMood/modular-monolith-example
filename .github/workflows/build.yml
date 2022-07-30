@@ -44,7 +44,7 @@ jobs:
         id: upload-build-output
         uses: actions/upload-artifact@v2
         with:
-          name: build-output-${{ github.run_id }}-${{ github.run_attempt }}
+          name: build-output
           path: '~/**/build/**/*'
   workflow2:
     runs-on: ubuntu-latest
@@ -55,7 +55,7 @@ jobs:
         id: download-build-output
         uses: actions/download-artifact@v2
         with:
-          name: build-output-${{ github.run_id }}-${{ github.run_attempt }}
+          name: build-output
 
       - name: Publish Test Results
         uses: mikepenz/action-junit-report@v2

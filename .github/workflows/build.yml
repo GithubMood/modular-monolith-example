@@ -20,7 +20,7 @@ jobs:
 
       - name: Generate unique build number
         run: |
-          echo "${GITHUB_SHA}-${{ github.run_id }}-${{ github.run_attempt }}" >> $UNIQUE_BUILD_NUMBER
+          echo UNIQUE_BUILD_NUMBER="${GITHUB_SHA}-${{ github.run_id }}-${{ github.run_attempt }}"
 
       - name: Display
         run: |

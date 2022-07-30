@@ -14,13 +14,13 @@ jobs:
       build: '**/build/**'
 
     steps:
-      - name: Generate number
-        run: |
-          echo "Number: ${{ github.head_ref }}-${{ github.run_attempt }}"
-
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout project
         uses: actions/checkout@v2
+
+      - name: Generate number
+        run: |
+          echo "Number: ${{ github.head_ref }}-${{ github.run_attempt }}"
 
       - name: Set up JDK
         uses: actions/setup-java@v2

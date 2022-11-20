@@ -1,8 +1,9 @@
 package com.monolith.example.author.impl.web;
 
-import com.monolith.example.author.impl.config.annotation.slices.RestControllerTest;
+import com.monolith.example.author.impl.config.annotation.CurrentModuleScope;
 import com.monolith.example.author.impl.domain.model.Author;
 import com.monolith.example.author.impl.domain.service.AuthorService;
+import com.monolith.example.integratoin.test.config.annotation.slices.RestControllerTest;
 import com.monolith.example.integratoin.test.utils.JsonUtils;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RestControllerTest(AuthorController.class)
+@CurrentModuleScope
 class AuthorControllerIT {
     @Autowired
     private MockMvc mockMvc;

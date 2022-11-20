@@ -4,5 +4,5 @@ apply from: "$rootDir/gradle/scripts/integration-test.gradle"
 dependencies {
     implementation project(":common:common-code")
     implementation project(":common:common-config")
-    implementation project(":modules:authentication:api")
+    implementation project(":modules:access:api")
 }

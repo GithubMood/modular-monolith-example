@@ -1,6 +1,5 @@
-package com.monolith.example.author.impl.config.annotation.slices;
+package com.monolith.example.integratoin.test.config.annotation.slices;
 
-import com.monolith.example.author.impl.config.annotation.ModuleProfiles;
 import com.monolith.example.integratoin.test.config.annotation.MongoTestConfig;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -17,6 +16,5 @@ import java.lang.annotation.Target;
 @Inherited
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @MongoTestConfig
-@ModuleProfiles
 public @interface ApplicationTest {
 }

@@ -14,5 +14,5 @@ import java.lang.annotation.Target;
 @Documented
 @Inherited
 @ActiveProfiles({"common", "test", "author"})
-public @interface ModuleProfiles {
+public @interface CurrentModuleScope {
 }

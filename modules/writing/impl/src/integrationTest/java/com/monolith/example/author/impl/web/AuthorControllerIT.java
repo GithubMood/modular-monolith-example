@@ -3,6 +3,7 @@ package com.monolith.example.author.impl.web;
 import com.monolith.example.author.impl.config.annotation.CurrentModuleScope;
 import com.monolith.example.author.impl.domain.model.Author;
 import com.monolith.example.author.impl.domain.service.AuthorService;
+import com.monolith.example.integratoin.test.config.annotation.InjectJsonUtils;
 import com.monolith.example.integratoin.test.config.annotation.slices.RestControllerTest;
 import com.monolith.example.integratoin.test.utils.JsonUtils;
 import org.junit.jupiter.api.Test;
@@ -19,6 +20,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 class AuthorControllerIT {
     @Autowired
     private MockMvc mockMvc;
+    @InjectJsonUtils
+    private JsonUtils jsonUtils;
+
     @MockBean
     private AuthorService authorService;
 
@@ -29,7 +33,7 @@ class AuthorControllerIT {
                 .name("Stephen King")
                 .age(74)
                 .build();
-        var jsonRequest = JsonUtils.convertToJson(author);
+        var jsonRequest = jsonUtils.convertToJson(author);
 
         //WHEN
         mockMvc.perform(post("/authors")

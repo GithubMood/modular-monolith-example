@@ -2,11 +2,11 @@ package com.monolith.example.integratoin.test.utils;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.experimental.UtilityClass;
+import lombok.RequiredArgsConstructor;
 
-@UtilityClass
+@RequiredArgsConstructor
 public class JsonUtils {
-    private final ObjectMapper objectMapper = new ObjectMapper();
+    private final ObjectMapper objectMapper;
 
     public String convertToJson(Object object) {
         try {
@@ -14,5 +14,13 @@ public class JsonUtils {
         } catch (JsonProcessingException e) {
             throw new IllegalArgumentException("Unable to convert object [%s] to json".formatted(object), e);
         }
+    }
+
+    public static JsonUtils withDefaultMapper() {
+        return new JsonUtils(new ObjectMapper());
+    }
+
+    public static JsonUtils withConfiguredMapper(ObjectMapper objectMapper) {
+        return new JsonUtils(objectMapper);
     }
 }

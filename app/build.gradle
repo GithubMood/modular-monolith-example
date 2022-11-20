@@ -1,0 +1,29 @@
+apply from: "$rootDir/gradle/scripts/unit-test.gradle"
+apply from: "$rootDir/gradle/scripts/integration-test.gradle"
+apply plugin: 'org.springframework.boot'
+apply plugin: 'com.palantir.git-version'
+
+ext {
+    appName = "monolith-example"
+    appVersion = "1.0.0"
+}
+
+bootJar {
+    mainClass = "com.monolith.example.MonlithExampleApplication"
+    archiveFileName = "${appName}-${appVersion}.${archiveExtension.get()}"
+    launchScript()
+}
+
+dependencies {
+    implementation project(":common:common-code")
+    implementation project(":common:common-config")
+
+    implementation project(":modules:writing:api")
+    implementation project(":modules:writing:impl")
+    implementation project(":modules:publishing:api")
+    implementation project(":modules:publishing:impl")
+    implementation project(":modules:access-managment:api")
+    implementation project(":modules:access-managment:impl")
+    implementation project(":modules:api-gateway:api")
+    implementation project(":modules:api-gateway:impl")
+}

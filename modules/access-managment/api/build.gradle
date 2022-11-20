@@ -1,3 +1,7 @@
+jar {
+    baseName 'access-managment-api'
+}
+
 dependencies {
     api project(":common:common-code")
 }

@@ -1,4 +1,4 @@
-package com.monolith.example.auth.impl.rest.dto;
+package com.monolith.example.auth.impl.domain.dto;
 
 import com.monolith.example.common.security.Role;
 import lombok.AllArgsConstructor;
@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class RegisterUserRequest {
+public class NewUserRequest {
     private Role role;
     private String email;
     private String password;

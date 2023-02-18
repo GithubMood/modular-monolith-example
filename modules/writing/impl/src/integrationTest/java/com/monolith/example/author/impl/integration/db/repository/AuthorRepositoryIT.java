@@ -1,13 +1,13 @@
 package com.monolith.example.author.impl.integration.db.repository;
 
 import com.monolith.example.author.impl.config.annotation.CurrentModuleScope;
-import com.monolith.example.integratoin.test.config.annotation.slices.PersistenceTest;
+import com.monolith.example.integratoin.test.config.annotation.slices.MongoTest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@PersistenceTest
+@MongoTest
 @CurrentModuleScope
 class AuthorRepositoryIT {
     @Autowired

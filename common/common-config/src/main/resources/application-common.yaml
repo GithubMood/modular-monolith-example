@@ -1,0 +1,17 @@
+spring:
+  output:
+    ansi:
+      enabled: always
+
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/myapp
+      database: local
+      auto-index-creation: true
+
+logging:
+  pattern:
+    console: "%clr(%d{${LOG_DATEFORMAT_PATTERN:----|yyyy-MM-dd HH:mm:ss.SSS}}){magenta} %clr(|%t|){faint} %clr(%level) %clr(|%logger{39}|){cyan} %clr(%m%n${LOG_EXCEPTION_CONVERSION_WORD:%rEx})"
+  level:
+    org.springframework: info
+    com.monolith.example: info

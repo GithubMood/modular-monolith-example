@@ -8,5 +8,5 @@ jar {
 dependencies {
     implementation project(":common:common-code")
     implementation project(":common:common-config")
-    implementation project(":modules:access-managment:api")
+    implementation project(":modules:identity-access-managment:api")
 }

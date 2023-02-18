@@ -18,12 +18,12 @@ dependencies {
     implementation project(":common:common-code")
     implementation project(":common:common-config")
 
+    implementation project(":modules:identity-access-managment:api")
+    implementation project(":modules:identity-access-managment:impl")
     implementation project(":modules:writing:api")
     implementation project(":modules:writing:impl")
     implementation project(":modules:publishing:api")
     implementation project(":modules:publishing:impl")
-    implementation project(":modules:access-managment:api")
-    implementation project(":modules:access-managment:impl")
     implementation project(":modules:api-gateway:api")
     implementation project(":modules:api-gateway:impl")
 }

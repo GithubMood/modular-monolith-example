@@ -1,0 +1,5 @@
+database:
+  init:
+    admin:
+      email: admin@gmail.com
+      password: admin-password

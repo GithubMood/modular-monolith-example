@@ -4,12 +4,14 @@ import com.monolith.example.auth.impl.domain.dto.NewUserRequest;
 import com.monolith.example.auth.impl.integration.db.entity.UserEntity;
 import com.monolith.example.auth.impl.integration.db.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
 public class RegisterService {
     private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
     public String registerNewUser(NewUserRequest newUserRequest) {
         var newUser = convertToEntity(newUserRequest);
@@ -21,7 +23,7 @@ public class RegisterService {
     private UserEntity convertToEntity(NewUserRequest newUserRequest) {
         return UserEntity.builder()
                 .email(newUserRequest.getEmail())
-                .password(newUserRequest.getPassword())
+                .password(passwordEncoder.encode(newUserRequest.getPassword()))
                 .role(newUserRequest.getRole())
                 .build();
     }

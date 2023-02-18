@@ -26,4 +26,6 @@ dependencies {
     implementation project(":modules:publishing:impl")
     implementation project(":modules:api-gateway:api")
     implementation project(":modules:api-gateway:impl")
+
+    testImplementation "com.tngtech.archunit:archunit-junit5:${archUnitVersion}"
 }

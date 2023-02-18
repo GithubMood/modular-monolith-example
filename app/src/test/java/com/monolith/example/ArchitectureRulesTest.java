@@ -22,10 +22,10 @@ class ArchitectureRulesTest {
     //Layers are used as there are no "module" abstraction in the ArchUnit where we can hide packages
     public static final ArchRule MODULE_ARCHITECTURE_RULE = layeredArchitecture()
             .consideringAllDependencies()
-            .layer("iam-api").definedBy("com.monolith.example.auth.api..")
-            .layer("iam-impl").definedBy("com.monolith.example.auth.impl..")
-//            .layer("writing-api").definedBy("com.monolith.example.author.api..")
-            .layer("writing-impl").definedBy("com.monolith.example.author.impl..")
+            .layer("iam-api").definedBy("com.monolith.example.iam.api..")
+            .layer("iam-impl").definedBy("com.monolith.example.iam.impl..")
+//            .layer("writing-api").definedBy("com.monolith.example.writing.api..")
+            .layer("writing-impl").definedBy("com.monolith.example.writing.impl..")
 //            .layer("publishing-api").definedBy("com.monolith.example.publishing.api..")
 //            .layer("publishing-impl").definedBy("com.monolith.example.publishing.impl..")
 

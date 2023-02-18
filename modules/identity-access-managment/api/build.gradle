@@ -1,5 +1,5 @@
 jar {
-    baseName 'access-managment-api'
+    baseName 'identity-access-managment-api'
 }
 
 dependencies {

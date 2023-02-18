@@ -2,7 +2,7 @@ apply from: "$rootDir/gradle/scripts/unit-test.gradle"
 apply from: "$rootDir/gradle/scripts/integration-test.gradle"
 
 jar {
-    baseName 'access-managment-impl'
+    baseName 'identity-access-managment-impl'
 }
 
 dependencies {

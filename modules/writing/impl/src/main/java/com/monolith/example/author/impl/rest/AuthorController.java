@@ -1,16 +1,16 @@
-package com.monolith.example.author.impl.web;
+package com.monolith.example.author.impl.rest;
 
 import com.monolith.example.author.impl.domain.model.Author;
 import com.monolith.example.author.impl.domain.service.AuthorService;
-import com.monolith.example.author.impl.web.dto.AuthorCreatedResponse;
+import com.monolith.example.author.impl.rest.dto.AuthorCreatedResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/authors")
 @RequiredArgsConstructor
+@RequestMapping("/authors")
 public class AuthorController {
     private final AuthorService authorService;
 

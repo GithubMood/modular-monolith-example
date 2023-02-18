@@ -1,4 +1,4 @@
-package com.monolith.example.author.impl.web.dto;
+package com.monolith.example.auth.impl.rest.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class AuthorCreatedResponse {
+public class UserRegisteredResponse {
     private String id;
 }

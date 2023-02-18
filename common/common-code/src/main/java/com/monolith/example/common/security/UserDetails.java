@@ -8,7 +8,7 @@ import lombok.Data;
 @Builder
 @AllArgsConstructor
 public class UserDetails {
-    private Long id;
+    private String id;
     private String email;
     private Role role;
 }

@@ -14,7 +14,7 @@ public class DummyAuthenticationProvider implements AuthenticationProvider {
             return UserDetails.builder()
                     .id(1L)
                     .email("admin@email.com")
-                    .role(Role.ADMIN)
+                    .role(Role.AUTHOR)
                     .build();
         }
 

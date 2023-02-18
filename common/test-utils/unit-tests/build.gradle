@@ -1,4 +1,4 @@
 dependencies {
-    implementation project(":utils:time-utils")
+    implementation project(":common:time-api")
     implementation "org.junit.jupiter:junit-jupiter"
 }

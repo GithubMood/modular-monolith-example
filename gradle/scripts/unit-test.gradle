@@ -1,5 +1,5 @@
 dependencies {
-    testImplementation project(":utils:unit-test-utils")
+    testImplementation project(":common:test-utils:unit-tests")
     testImplementation "org.assertj:assertj-core"
     testImplementation "org.junit.jupiter:junit-jupiter"
 }

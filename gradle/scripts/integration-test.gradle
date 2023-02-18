@@ -11,7 +11,7 @@ configurations {
 }
 
 dependencies {
-    integrationTestImplementation project(":utils:integration-test-utils")
+    integrationTestImplementation project(":common:test-utils:integration-tests")
     integrationTestImplementation "org.springframework.boot:spring-boot-starter-test"
 }
 

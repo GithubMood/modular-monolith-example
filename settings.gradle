@@ -1,9 +1,9 @@
 rootProject.name = 'modular-monolith-example'
-include "utils:time-utils",
-        "utils:unit-test-utils",
+include "common:time-api",
+        "common:test-utils:unit-tests",
         "common:common-code",
         "common:common-config",
-        "utils:integration-test-utils",
+        "common:test-utils:integration-tests",
         "modules:writing:api",
         "modules:writing:impl",
         "modules:publishing:api",

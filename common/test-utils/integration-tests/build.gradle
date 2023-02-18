@@ -1,5 +1,5 @@
 dependencies {
-    implementation project(":utils:unit-test-utils")
+    implementation project(":common:test-utils:unit-tests")
     implementation project(":common:common-code")
     implementation project(":common:common-config")
     implementation "org.testcontainers:mongodb"

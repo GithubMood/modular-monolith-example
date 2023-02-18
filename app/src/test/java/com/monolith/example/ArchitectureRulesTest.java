@@ -34,6 +34,17 @@ class ArchitectureRulesTest {
 //            .whereLayer("publishing-impl").mayNotBeAccessedByAnyLayer();
 
     @ArchTest
+    public static final ArchRule LAYERED_ARCHITECTURE_RULE = layeredArchitecture()
+            .consideringAllDependencies()
+            .layer("rest").definedBy("com.monolith.example..rest..")
+            .layer("domain").definedBy("com.monolith.example..domain..")
+            .layer("integration").definedBy("com.monolith.example..integration..")
+
+            .whereLayer("rest").mayNotBeAccessedByAnyLayer()
+            .whereLayer("domain").mayOnlyBeAccessedByLayers("rest")
+            .whereLayer("integration").mayOnlyBeAccessedByLayers("domain");
+
+    @ArchTest
     public static final ArchRule RESTRICT_USAGE_OF_LOCAL_DATE_TIME_NOW = noClasses()
             .should().callMethod(LocalDateTime.class, "now")
             .because("Use Time.currentDateTime methods instead of as it gives opportunity of mocking time in tests");

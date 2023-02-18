@@ -1,12 +1,10 @@
 package com.monolith.example.author.impl.integration.db.entity;
 
-import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
-import lombok.experimental.FieldDefaults;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -20,23 +18,22 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Accessors(chain = true)
-@FieldDefaults(level = AccessLevel.PRIVATE)
 @Document("author")
 public class AuthorEntity {
     @Id
-    String id;
+    private String id;
 
     @Field
-    String name;
+    private String name;
 
     @Field
-    int age;
+    private int age;
 
     @Field
     @CreatedDate
-    LocalDateTime createdAt;
+    private LocalDateTime createdAt;
 
     @Field
     @LastModifiedDate
-    LocalDateTime lastModifiedAt;
+    private LocalDateTime lastModifiedAt;
 }

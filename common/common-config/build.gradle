@@ -1,5 +1,4 @@
 dependencies {
     implementation project(":common:common-code")
-    api "org.springframework.boot:spring-boot-starter-security"
     api "org.springframework.boot:spring-boot-starter-web"
 }

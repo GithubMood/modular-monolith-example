@@ -9,4 +9,5 @@ dependencies {
     implementation project(":common:common-code")
     implementation project(":common:common-config")
     implementation project(":modules:identity-access-managment:api")
+    implementation "org.springframework.security:spring-security-crypto"
 }

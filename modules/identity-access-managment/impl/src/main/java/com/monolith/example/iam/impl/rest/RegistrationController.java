@@ -4,13 +4,12 @@ import com.monolith.example.iam.impl.domain.dto.NewUserRequest;
 import com.monolith.example.iam.impl.domain.service.RegisterService;
 import com.monolith.example.iam.impl.rest.dto.UserRegisteredResponse;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+@Slf4j
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/register")
@@ -22,7 +21,7 @@ public class RegistrationController {
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     @ResponseStatus(HttpStatus.CREATED)
-    public UserRegisteredResponse registerNewUser(NewUserRequest newUserRequest) {
+    public UserRegisteredResponse registerNewUser(@RequestBody NewUserRequest newUserRequest) {
         var userId = registerService.registerNewUser(newUserRequest);
 
         return UserRegisteredResponse.builder()

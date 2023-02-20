@@ -1,11 +1,10 @@
 package com.monolith.example.e2e;
 
 import com.monolith.example.common.security.Role;
+import com.monolith.example.config.annotation.ApplicationTest;
 import com.monolith.example.gateway.web.dto.LoginRequest;
 import com.monolith.example.iam.impl.domain.dto.NewUserRequest;
 import com.monolith.example.integratoin.test.config.annotation.InjectJsonUtils;
-import com.monolith.example.integratoin.test.config.annotation.RedisTestConfig;
-import com.monolith.example.integratoin.test.config.annotation.slices.ApplicationTest;
 import com.monolith.example.integratoin.test.utils.JsonUtils;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +16,6 @@ import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@RedisTestConfig
 @ApplicationTest
 class UserJourneyIT {
     private static final String X_AUTH_TOKEN = "X-Auth-Token";

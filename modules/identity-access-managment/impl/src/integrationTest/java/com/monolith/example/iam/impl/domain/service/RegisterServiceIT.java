@@ -1,17 +1,15 @@
 package com.monolith.example.iam.impl.domain.service;
 
 import com.monolith.example.common.security.Role;
-import com.monolith.example.iam.impl.config.annotation.CurrentModuleScope;
+import com.monolith.example.iam.impl.config.annotation.CurrentModuleTest;
 import com.monolith.example.iam.impl.domain.dto.NewUserRequest;
 import com.monolith.example.iam.impl.integration.db.repository.UserRepository;
-import com.monolith.example.integratoin.test.config.annotation.slices.ApplicationTest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@ApplicationTest
-@CurrentModuleScope
+@CurrentModuleTest
 class RegisterServiceIT {
     @Autowired
     private RegisterService registerService;

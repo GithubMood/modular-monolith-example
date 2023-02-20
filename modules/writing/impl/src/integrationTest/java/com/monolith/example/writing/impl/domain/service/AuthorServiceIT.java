@@ -1,15 +1,13 @@
 package com.monolith.example.writing.impl.domain.service;
 
-import com.monolith.example.integratoin.test.config.annotation.slices.ApplicationTest;
-import com.monolith.example.writing.impl.config.annotation.CurrentModuleScope;
+import com.monolith.example.writing.impl.config.annotation.CurrentModuleTest;
 import com.monolith.example.writing.impl.domain.model.Author;
 import com.monolith.example.writing.impl.integration.db.repository.AuthorRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-@ApplicationTest
-@CurrentModuleScope
+@CurrentModuleTest
 class AuthorServiceIT {
     @Autowired
     private AuthorService authorService;
